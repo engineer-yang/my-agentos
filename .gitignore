@@ -1,0 +1,14 @@
+# Keep project documentation visible despite machine-wide ignore rules.
+!/.gitignore
+!/docs/
+!/docs/**
+
+.DS_Store
+.idea/
+*.iml
+target/
+.oryxos/
+.env
+.env.*
+!.env.example
+*.log

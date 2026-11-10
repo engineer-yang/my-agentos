@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OryxOS，面向可配置 AI Agent 的 Java 原生运行时。了解模型接入、ReAct、记忆、工具与服务接口的设计，开始运行九模块 Maven 工程。">
+  <meta name="theme-color" content="#f7f9f5">
+  <title>OryxOS · 为 Agent 构建运行的基础</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%231b6043'/%3E%3Cpath d='M11 9l5 14h8l5-14M16 23l4 9 4-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#" aria-label="OryxOS 首页"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12"/><path d="M11 9l5 14h8l5-14M16 23l4 9 4-9"/></svg><span>Oryx<span class="brand-light">OS</span></span></a>
+      <nav aria-label="主导航"><a href="#capabilities">核心能力</a><a href="#architecture">架构</a><a href="#docs">文档</a><a href="#roadmap">路线图</a></nav>
+      <a class="button nav-cta" href="#start">开始探索 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="status-dot"></span> JAVA-NATIVE AGENT RUNTIME</span>
+        <h1 id="hero-title">让 Agent 的能力，<br>有一个<span class="accent">运行的基础。</span></h1>
+        <p class="hero-description">从模型对话，到记忆、工具与服务。<br>OryxOS 希望用熟悉的 Java 技术栈，让业务 Agent<br class="desktop-break"> 在自己的工作区里运行起来。</p>
+        <div class="hero-actions"><a class="button primary" href="#start">运行第一个入口 <span aria-hidden="true">→</span></a><a class="text-link" href="../docs/技术方案文档.html">了解设计 <span aria-hidden="true">↗</span></a></div>
+        <p class="hero-note">早期开发中 <span>·</span> 工程骨架与版本 CLI 已就绪</p>
+      </div>
+      <div class="runtime" aria-label="运行时设计示意，业务能力尚待实现">
+        <div class="runtime-top"><span><span class="tiny-square"></span> INSIDE ORYXOS</span><span class="small-tag">设计示意</span></div>
+        <div class="profile-row"><span class="profile-icon" aria-hidden="true">⌘</span><div><strong>Your Agent</strong><span>身份 · 模型 · 工具 · 上下文</span></div><span class="mono profile-label">Profile</span></div>
+        <div class="flow-stem"></div>
+        <div class="engine"><span class="engine-icon" aria-hidden="true">✳</span><div><span class="mono">THE RUNTIME CORE</span><h2>ReAct Engine</h2><p>思考 <span>→</span> 行动 <span>→</span> 观察 <span>↺</span></p></div></div>
+        <div class="flow-branches" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="runtime-services"><div><span aria-hidden="true">◈</span><strong>Models</strong><small>理解与生成</small></div><div><span aria-hidden="true">▤</span><strong>Memory</strong><small>保留上下文</small></div><div><span aria-hidden="true">⌁</span><strong>Tools</strong><small>连接真实世界</small></div></div>
+        <div class="runtime-bottom"><span class="mono">CLI / REST → Agent Runtime</span><span aria-hidden="true">↗</span></div>
+      </div>
+    </section>
+    <div class="stack-band"><div class="container stack-inner"><span>以 Java 生态为起点</span><strong>Java <b>21</b></strong><i></i><strong>Spring Boot <b>3.5</b></strong><i></i><strong>Maven <b>9 modules</b></strong><span class="stack-end">一个进程，逐步构建完整运行时。</span></div></div>
+
+    <section class="section container" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-intro"><div><span class="eyebrow">01 / THE FOUNDATION</span><h2 id="capabilities-title">先让一个 Agent，<br>真正跑得好。</h2></div><p>五大核心能力，围绕同一条执行链路。<br>业务方配置 Profile、编写工具、接入服务，<br>运行时负责把这些能力组织起来。<span class="planned-label">以下为首版设计目标 · 尚待实现</span></p></div>
+      <div class="capabilities-grid">
+        <article class="feature featured"><span class="feature-number">01</span><span class="feature-symbol" aria-hidden="true">◈</span><h3>接入模型</h3><span class="mono">Provider</span><p>通过显式 Provider 映射连接模型，让业务 Agent 按配置选择自己的模型能力。</p><div class="feature-foot">首版计划验证 DeepSeek / Kimi</div></article>
+        <article class="feature"><span class="feature-number">02</span><span class="feature-symbol" aria-hidden="true">↻</span><h3>控制执行循环</h3><span class="mono">ReAct</span><p>自主控制模型与工具的往返过程，让每次行动有边界、每一步结果可追踪。</p><div class="feature-foot">统一 ToolExecutor 调度</div></article>
+        <article class="feature"><span class="feature-number">03</span><span class="feature-symbol" aria-hidden="true">▤</span><h3>记住有用的上下文</h3><span class="mono">Memory</span><p>独立的会话历史与工作区长期记忆，让对话能够延续，让经验可以再次使用。</p><div class="feature-foot">会话记忆 + MEMORY.md</div></article>
+        <article class="feature"><span class="feature-number">04</span><span class="feature-symbol" aria-hidden="true">⌁</span><h3>把想法变成行动</h3><span class="mono">Tools & Skills</span><p>整合文件、Shell、HTTP、Java 与 MCP 工具，以 Skill 提供任务指令和上下文。</p><div class="feature-foot">统一工具接口与调用边界</div></article>
+        <article class="feature"><span class="feature-number">05</span><span class="feature-symbol" aria-hidden="true">⇄</span><h3>连接你的应用</h3><span class="mono">Web Service</span><p>通过 REST 接口管理会话、发送消息和调用 Agent，把运行时嵌入现有业务流程。</p><div class="feature-foot">首版规划 10 个 REST 端点</div></article>
+      </div>
+    </section>
+
+    <section class="architecture-section" id="architecture" aria-labelledby="architecture-title"><div class="container architecture-layout">
+      <div class="architecture-copy"><span class="eyebrow">02 / BUILT FOR JAVA</span><h2 id="architecture-title">边界清晰。<br>从九个模块开始。</h2><p>以 core 定义核心边界，能力模块围绕它扩展，由 boot 完成应用装配。保留熟悉的 Maven 工程组织方式，逐步填入运行时能力。</p><a class="text-link" href="../docs/技术方案文档.html">阅读完整技术方案 <span aria-hidden="true">↗</span></a><div class="architecture-note"><span class="status-dot"></span><span>模块构建已通过<br><small>模块内的业务功能仍在开发计划中</small></span></div></div>
+      <div class="module-map"><div class="module-top"><span class="mono">oryxos-boot</span><span>启动与装配</span></div><div class="module-grid"><div><b>web</b><span>REST 接入</span></div><div><b>channel-cli</b><span>交互渠道</span></div><div><b>cli</b><span>命令入口</span></div><div><b>provider</b><span>模型适配</span></div><div><b>memory</b><span>记忆服务</span></div><div><b>tool</b><span>工具调用</span></div><div class="module-storage"><b>storage</b><span>持久化</span></div></div><div class="module-core"><span><span aria-hidden="true">✳</span> oryxos-core</span><span>核心引擎与接口</span></div><p>模块名统一使用 oryxos- 前缀 · 构建依赖无环</p></div>
+    </div></section>
+
+    <section class="section container start-layout" id="start" aria-labelledby="start-title">
+      <div><span class="eyebrow">03 / START SMALL</span><h2 id="start-title">第一步，<br>在你的机器上运行。</h2><p class="section-description">准备 JDK 21 和 Maven 3.6.3+，<br>在项目根目录执行以下命令。</p><div class="start-checks"><span><b>✓</b> 九模块编译打包</span><span><b>✓</b> 独立 CLI 版本入口</span><span><b>✓</b> Spring Boot 启动骨架</span></div><p class="start-limit">当前无需模型密钥或数据库。<br>完整 Agent 对话和 REST 接口尚待实现。</p></div>
+      <div class="terminal"><div class="terminal-bar"><div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>my-agentos / terminal</span><span class="mono">JDK 21</span></div>
+        <div class="command"><div class="command-heading"><span>01 <b>编译与打包</b></span><button class="copy-button" data-copy="build-command" type="button" aria-label="复制编译打包命令" hidden>复制</button></div><pre><code id="build-command">mvn clean package</code></pre><p class="terminal-output">BUILD SUCCESS</p></div>
+        <div class="command"><div class="command-heading"><span>02 <b>运行 CLI</b></span><button class="copy-button" data-copy="cli-command" type="button" aria-label="复制 CLI 运行命令" hidden>复制</button></div><pre><code id="cli-command">java -jar oryxos-cli/target/oryxos-cli-0.1.0-SNAPSHOT.jar</code></pre><p class="terminal-output">OryxOS 0.1.0-SNAPSHOT</p></div>
+        <div class="command"><div class="command-heading"><span>03 <b>启动 Spring Boot 骨架</b></span><button class="copy-button" data-copy="boot-command" type="button" aria-label="复制 Spring Boot 启动命令" hidden>复制</button></div><pre><code id="boot-command">java -jar oryxos-boot/target/oryxos-boot-0.1.0-SNAPSHOT.jar</code></pre><p class="terminal-muted">启动上下文后正常退出，当前不监听 HTTP 端口。</p></div>
+        <div class="terminal-footer"><span>本地已验证 · 开发版本，尚未发布</span><span aria-hidden="true">↵</span></div>
+      </div>
+      <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="docs-section" id="docs" aria-labelledby="docs-title"><div class="container"><div class="section-intro"><div><span class="eyebrow">04 / EXPLORE THE THINKING</span><h2 id="docs-title">从设计开始了解 OryxOS。</h2></div><p>四份设计文档，记录为什么做、做什么、<br>如何实现，以及如何持续推进。</p></div><div class="docs-grid">
+      <a href="../docs/业界调研.html"><span class="doc-type">RESEARCH / 01</span><h3>业界调研 <span aria-hidden="true">↗</span></h3><p>项目动机、行业背景与长期方向</p><span class="doc-note">外部事实与数据仍需核验</span></a>
+      <a href="../docs/需求文档.html"><span class="doc-type">PRODUCT / 02</span><h3>需求文档 <span aria-hidden="true">↗</span></h3><p>核心能力、场景与首版交付范围</p><span class="doc-note">从单个 Agent 的运行时出发</span></a>
+      <a href="../docs/技术方案文档.html"><span class="doc-type">ARCHITECTURE / 03</span><h3>技术方案 <span aria-hidden="true">↗</span></h3><p>模块边界、执行链路与数据设计</p><span class="doc-note">理解 Java 原生的实现路径</span></a>
+      <a href="../docs/AI%20编程指南.html"><span class="doc-type">DEVELOPMENT / 04</span><h3>AI 编程指南 <span aria-hidden="true">↗</span></h3><p>规格驱动的实现顺序与协作方式</p><span class="doc-note">将设计拆成可验证的工作</span></a>
+    </div></div></section>
+
+    <section class="section container" id="roadmap" aria-labelledby="roadmap-title"><div class="section-intro"><div><span class="eyebrow">05 / BUILDING IN THE OPEN</span><h2 id="roadmap-title">一步一步，让运行时完整起来。</h2></div><p>当前版本 0.1.0-SNAPSHOT<br>按能力推进，以实际验证作为完成依据。</p></div>
+      <ol class="roadmap"><li class="current"><span class="roadmap-dot"></span><span class="roadmap-state">当前阶段</span><h3>工程与模型接入</h3><p>Maven 骨架与版本 CLI 已就绪；工作区、Profile 和模型接入待实现。</p></li><li><span class="roadmap-dot"></span><span class="roadmap-state">计划中</span><h3>循环、记忆与工具</h3><p>实现 ReAct、长期记忆、工具调度与基础 Skill 加载。</p></li><li><span class="roadmap-dot"></span><span class="roadmap-state">计划中</span><h3>服务与持久化</h3><p>接入 REST、SQLite、会话恢复和完整 CLI 命令。</p></li><li><span class="roadmap-dot"></span><span class="roadmap-state">后续验收</span><h3>验证真实场景</h3><p>跑通五个端到端 Demo，完善快速开始、性能测试和发布检查。</p></li></ol>
+      <div class="scope-note"><strong>从可信工作区起步</strong><p>首版面向单进程、个人或可信工作区。长期记忆在工作区内共享；调用外部模型和工具时，相关数据可能外发。身份认证、多租户隔离和完整企业治理属于后续方向。</p></div>
+    </section>
+    <section class="closing container"><div><span class="eyebrow">LET’S BUILD THE FOUNDATION.</span><h2>用熟悉的 Java，探索 Agent 的下一步。</h2></div><a class="button primary" href="#start">从本地构建开始 <span aria-hidden="true">→</span></a></section>
+  </main>
+  <footer class="container footer"><div><a class="footer-brand" href="#">OryxOS<span> / </span></a><span>Java-native. Agent-ready by design.</span></div><p>早期开发项目 · 尚未发布 · 开源许可证待选定</p><a href="#docs">项目文档 <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
