@@ -16,7 +16,7 @@ mvn -B -ntp clean package
 
 此命令包含编译、测试、普通 JAR 和 boot 可执行 JAR 打包。不跳过测试。需要单独执行测试时使用 `mvn -B -ntp test`。产物和启动方法见 [构建指南](docs/BUILD.md)。尚未配置格式化插件或 CI，不引用其他项目的命令作为已验证步骤。
 
-当前尚未配置远端仓库。下面的 Issue/PR 流程供后续 GitHub 托管使用；本地协作时直接通过维护者讨论并更新文档。
+仓库位于 [engineer-yang/my-agentos](https://github.com/engineer-yang/my-agentos)，当前为私有仓库。具备访问权限后可使用下面的 Issue/PR 流程；本地协作时直接通过维护者讨论并更新文档。
 
 ## 开始之前
 

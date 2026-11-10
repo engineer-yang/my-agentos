@@ -6,6 +6,7 @@
 
 ### Added
 
+- GitHub 私有仓库托管及主页源码入口，地址为 https://github.com/engineer-yang/my-agentos。
 - 浅色中文项目主页：五大能力、九模块架构、可复制构建命令、设计文档和路线图；支持离线访问及窄屏布局，尚未发布公网。
 - CLI 独立 main 入口和可运行普通 JAR，打印 Maven 项目版本。
 - 九模块 Maven 工程，固定 JDK 21 与 Spring Boot 3.5.16，根 POM 管理内部模块版本。

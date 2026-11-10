@@ -8,6 +8,8 @@
 
 [项目主页（本地）](website/index.html) · [主页预览与维护](website/README.md)
 
+[GitHub 仓库](https://github.com/engineer-yang/my-agentos)（私有，需要访问权限）
+
 > **项目状态：构建骨架已就绪。** 九模块 Maven 工程已通过编译、测试、打包及启动验证；Agent 业务能力仍待实现，尚无产品发布版本。
 
 ## 项目介绍
@@ -51,6 +53,8 @@ OryxOS 自己控制 ReAct 循环和工具执行，Spring AI 提供协议适配�
 
 准备 JDK 21 和 Maven 3.6.3+，在项目根目录执行：
 
+有仓库访问权限时，可先执行 `git clone https://github.com/engineer-yang/my-agentos.git`，然后进入 `my-agentos` 目录。
+
 ```sh
 mvn -B -ntp clean package
 java -jar oryxos-boot/target/oryxos-boot-0.1.0-SNAPSHOT.jar
@@ -82,7 +86,7 @@ CLI 版本入口可独立运行：`java -jar oryxos-cli/target/oryxos-cli-0.1.0-
 
 ## 参与贡献
 
-欢迎文档修正、可复现的问题报告和范围明确的实现建议。协作流程与验证要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。仓库已准备 Issue 和 PR 模板，供后续托管到 GitHub 时使用；当前尚未配置远端仓库。
+欢迎文档修正、可复现的问题报告和范围明确的实现建议。协作流程与验证要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。仓库已托管到 GitHub，并准备 Issue 和 PR 模板；当前为私有仓库，参与者需要访问权限。
 
 AI 编程工具请先阅读 [AGENTS.md](AGENTS.md)；Claude Code 使用 [CLAUDE.md](CLAUDE.md) 作为入口。
 

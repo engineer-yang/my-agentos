@@ -21,7 +21,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 - 页面使用原生 HTML/CSS/JavaScript；无远程字体、CDN 或第三方脚本。未新增 Maven 模块或 Web 服务。
 - `index.html` 维护内容与命令，`styles.css` 维护响应式布局，`main.js` 仅处理复制按钮。JavaScript 不可用时仍可阅读、导航和手动复制命令。
 - 更新版本号时，同步页面命令与根 POM。CLI 示例是真实可运行入口；Agent 架构图和五大能力明确标为设计目标。
-- 当前没有远端仓库和许可证，不提供虚构 GitHub、下载或发布入口。
+- GitHub 入口指向实际的 [engineer-yang/my-agentos](https://github.com/engineer-yang/my-agentos) 私有仓库，需要访问权限。尚未选定许可证或发布版本，不提供虚构下载入口。
 - 正式发布前需确定域名、托管和公开资料范围；部署时保留 `website/` 与 `docs/` 的相对路径，或对应调整链接。只上传 `website/` 会导致文档链接失效。
 
 ## 2026-11-10 验证

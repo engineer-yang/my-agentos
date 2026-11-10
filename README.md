@@ -2,6 +2,8 @@
 
 [Project homepage (local)](website/index.html) · [Preview and maintenance](website/README.md)
 
+[GitHub repository](https://github.com/engineer-yang/my-agentos) (private; access required)
+
 **A Java-native runtime for configurable AI agents.**
 
 English | [简体中文](README_CN.md)
@@ -51,6 +53,8 @@ OryxOS will control the ReAct loop and tool execution. Spring AI will provide pr
 
 With JDK 21 and Maven 3.6.3+ available, run from the repository root:
 
+With repository access, clone using `git clone https://github.com/engineer-yang/my-agentos.git`, then enter the `my-agentos` directory.
+
 ```sh
 mvn -B -ntp clean package
 java -jar oryxos-boot/target/oryxos-boot-0.1.0-SNAPSHOT.jar
@@ -82,7 +86,7 @@ The implementation sequence is **models → ReAct → memory and tools → REST 
 
 ## Contributing
 
-Documentation corrections, reproducible problem reports, and scoped implementation proposals are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the current workflow and validation expectations. The repository includes Issue and pull request templates for future GitHub hosting; no remote is configured yet.
+Documentation corrections, reproducible problem reports, and scoped implementation proposals are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the current workflow and validation expectations. The repository is hosted privately on GitHub with Issue and pull request templates; contributors need repository access.
 
 AI coding tools should read [AGENTS.md](AGENTS.md). [CLAUDE.md](CLAUDE.md) is the Claude Code entry point.
 

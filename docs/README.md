@@ -43,4 +43,4 @@
 - [Spring AI Alibaba README](https://github.com/alibaba/spring-ai-alibaba/blob/main/README.md)：简介、架构、能力、Getting Started 和项目文档。
 - [LangChain4j README](https://github.com/langchain4j/langchain4j/blob/main/README.md) 与 [贡献指南](https://github.com/langchain4j/langchain4j/blob/main/CONTRIBUTING.md)：文档、示例与贡献分工，以及提交变更时的验证说明。
 
-本项目尚无发布版本、CI、远端仓库或已选许可证，因此不添加对应的成功徽章、下载地址或虚构联系方式。贡献指南为当前阶段最小版本，完整社区治理仍按台账后续完善。
+本项目已托管到 [GitHub 私有仓库](https://github.com/engineer-yang/my-agentos)，尚无发布版本、CI 或已选许可证，因此不添加对应的成功徽章、下载地址或虚构联系方式。贡献指南为当前阶段最小版本，完整社区治理仍按台账后续完善。
